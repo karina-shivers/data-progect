@@ -17,7 +17,7 @@ For assistance:
 Create the `showPage` function
 This function will create and insert/append the elements needed to display a "page" of nine students
 */
-
+const itemsPerPage = 9;
 
 
 /*
@@ -25,6 +25,11 @@ Create the `addPagination` function
 This function will create and insert/append the elements needed for the pagination buttons
 */
 
+function showPage( list, page ) {
+   const startIndex = (page * itemsPerPage) - itemsPerPage;
+   const endIndex = page * itemsPerPage;
+   let studentList = document.querySelector('.student-list');
 
+   studentList.innerHTML = '';
 
 // Call functions
