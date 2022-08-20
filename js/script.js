@@ -30,33 +30,32 @@ Create the `addPagination` function
 This function will create and insert/append the elements needed for the pagination buttons
 */
 function addPagination(list) {
-   let numOfPages = Math.ceil(list.length / 9);
-   let linkList = document.querySelector('.link-list');
-   linkList.innerHTML = '';
-   for (let i = 1; i <= numOfPages; i++) {
-     let button = `
-         <li>
-         <button type="button">${i}</button>
-         </li>
-       `;
+
+  const numOfPages = Math.ceil(list.length / perPage);
+  const linkList = document.querySelector(".link-list");
  
-     linkList.insertAdjacentHTML('beforeend', button);
-     const buttonActive = document.querySelector('li button');
-     buttonActive.className = 'active';
-   }
- 
-   linkList.addEventListener('click', (e) => {
-     const button = e.target;
-     const pageNumber = button.textContent;
-     const buttonActive = linkList.querySelector('.active');
-     if (e.target.tagName === 'BUTTON') {
-       buttonActive.className = '';
-       button.className = 'active';
-       showPage(list, pageNumber);
-     }
-   });
- 
- }
+  linkList.innerHTML = "";
+  for (let i = 1; i <= numOfPages; i++) {
+    const button = `
+         <li><button type="button">${[i]}</button></li>
+      `;
+    linkList.insertAdjacentHTML("beforeend", button);
+    let activeBtn = document.querySelector("li button");
+    activeBtn.className = "active";
+  }
+
+  
+  linkList.addEventListener("click", (e) => {
+    if (e.target.tagName === "BUTTON") {
+      let activeClass = document.querySelector(".active");
+      activeClass.className = "";
+      e.target.className = "active";
+      showPage(list, e.target.textContent);
+    }
+  });
+}
+
+
  // appends the html elements needed for the search input
  function addSearchBar() {
    const header = document.querySelector('.header');
