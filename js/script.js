@@ -23,7 +23,7 @@ function showPage( list, page ) {
    const endIndex = page * itemsPerPage;
    let studentList = document.querySelector('.student-list');
 
-   studentList.innerHTML = '';
+   studentList.innerHTML = "";
 /*
 Create the `addPagination` function
 This function will create and insert/append the elements needed for the pagination buttons
