@@ -22,6 +22,7 @@ function showPage( list, page ) {
    const startIndex = (page * itemsPerPage) - itemsPerPage;
    const endIndex = page * itemsPerPage;
    let studentList = document.querySelector('.student-list');
+}
 
    studentList.innerHTML = "";
 /*
