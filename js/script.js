@@ -95,4 +95,4 @@ function searchBar(searchInput, list) {
  // Event listener on keyup for search filtering
  search.addEventListener('keyup', () => {
    searchBar(search, data);
- })};
+ )};
